@@ -3,11 +3,13 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        if len(nums) <= 1:
-            return nums
-        
-        for i in nums:
-            if i == 0:
-                nums.append(0)
-                nums.remove(0)
-                
+
+        left=0
+        right=0
+        while right<len(nums):
+            if nums[right]==0:
+                right+=1
+            else:
+                nums[left],nums[right]=nums[right],nums[left] #swap the numbers
+                left+=1
+                right+=1
