@@ -24,9 +24,6 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.minStack[-1]
-        
-    [-10, 14, 10]
-    [-10, -10, -10]
 
 # Your MinStack object will be instantiated and called as such:
 # obj = MinStack()
