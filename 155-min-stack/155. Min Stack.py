@@ -14,10 +14,10 @@ class MinStack:
         if self.stack:
             self.minStack.pop()
             self.stack.pop()
-            if not self.stack:
-                self.minVal = float('inf')
-            else:
-                self.minVal = self.minStack[-1]
+        if not self.stack:
+            self.minVal = float('inf')
+        else:
+            self.minVal = self.minStack[-1]
         
     def top(self) -> int:
         return self.stack[-1]
