@@ -3,11 +3,12 @@ class Solution:
         stack = []
         left = 0
 
-        for i in range(len(pushed)):
-            stack.append(pushed[i])
+        for right in range(len(pushed)):
+            stack.append(pushed[right])
+
             while stack and stack[-1] == popped[left]:
                 stack.pop()
                 left += 1
-
+            
         return len(stack) == 0
         
