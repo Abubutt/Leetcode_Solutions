@@ -12,7 +12,7 @@ class Solution:
 
         while dq and rq:
             count += 1
-
+            
             if dq[0] < rq[0]:
                 dq.append(count)
             else:
