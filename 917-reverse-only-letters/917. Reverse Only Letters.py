@@ -1,23 +1,23 @@
 class Solution:
     def reverseOnlyLetters(self, s: str) -> str:
+        letters = [letter for letter in s]
+        size = len(s)
         left = 0
-        right = len(s) - 1
-        ans = [char for char in s]
+        right = size - 1
 
         while left < right:
-            if not ans[left].isalpha():
-                left+=1
-                continue
+            while left < right and not letters[left].isalpha():
+                left += 1
+            
+            while left < right and not letters[right].isalpha():
+                right -= 1
 
-            if not ans[right].isalpha():
-                right-=1
-                continue
-
-            ans[left], ans[right] = ans[right], ans[left]
-
+            letters[left], letters[right] = letters[right], letters[left]
+            
             left += 1
             right -= 1
-        
-        return "".join(ans)
 
+        return "".join(letters)
+
+        
         
