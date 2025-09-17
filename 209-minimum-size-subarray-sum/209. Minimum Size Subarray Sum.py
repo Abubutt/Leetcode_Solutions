@@ -12,5 +12,3 @@ class Solution:
                 left += 1
 
         return 0 if ans == float('inf') else ans
-
-        [1, 4 ,4]
