@@ -1,19 +1,19 @@
 class Solution:
     def isPathCrossing(self, path: str) -> bool:
-        movement = {'N': (0, 1), 'S': (0, -1), 'E': (1, 0), 'W': (-1, 0)}
+        direction = {'N': (0, 1), 'S': (0, -1), 'E': (1, 0), 'W': (-1, 0)}
         visited = {(0, 0)}
-        pos = (0, 0)
+        position = (0, 0)
 
-        for move in path:
-            dx, dy = movement[move]
-            x, y = pos
-            pos = (x+dx, y+dy)
-
-            if pos in visited:
-                return True
-            visited.add(pos)
-        
-        return False
+        for p in path:
+            x, y = direction[p]
+            posX, posY = position
+            newPos = (posX + x, posY + y)
             
+            if newPos in visited:
+                return True
+            
+            visited.add(newPos)
+            position = newPos
 
+        return False
         
