@@ -1,15 +1,15 @@
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:
-        dest = {}
-        for path in paths:
-            cityA, cityB = path
-            dest[cityA] = cityB
+        connected = set()
+        ans = ""
 
         for path in paths:
             cityA, cityB = path
-            if cityA not in dest:
-                return cityA
-            elif cityB not in dest:
+            connected.add(cityA)
+
+        for path in paths:
+            cityA, cityB = path
+            connected.add(cityA)
+
+            if cityB not in connected:
                 return cityB
-
-        
