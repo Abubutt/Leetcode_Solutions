@@ -11,8 +11,8 @@ class Solution:
             if i == 0 and amount % coins[i] > 0:
                 return float('inf')
 
-            if amount == 0:
-                return 0
+            # if amount == 0:
+            #     return 0
 
             pick = float('inf')
             if coins[i] <= amount:
