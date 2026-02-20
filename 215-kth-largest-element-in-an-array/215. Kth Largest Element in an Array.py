@@ -3,10 +3,10 @@ class Solution:
         heap = []
 
         for i in range(len(nums)):
-            heapq.heappush(heap, (nums[i], -1*i))
+            heapq.heappush(heap, nums[i])
 
             if len(heap) > k:
                 heapq.heappop(heap)
 
-        return heapq.heappop(heap)[0]
+        return heapq.heappop(heap)
         
