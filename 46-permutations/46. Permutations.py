@@ -2,8 +2,7 @@ class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         def backTrack(seen, currPath):
             if len(currPath) == len(nums):
-                path = [val for val in currPath]
-                ans.append(path)
+                ans.append(currPath[:])
                 return
 
 
