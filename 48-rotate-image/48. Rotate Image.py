@@ -3,13 +3,21 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        
-        n = len(matrix)
+        rows = len(matrix)
+        cols = len(matrix[0])
 
-        for row in range(n):
-            for col in range(n):
-                if col > row:
-                    matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
+        currCol = 0
 
-        for row in range(n):
+        for row in range(rows):
+            for col in range(currCol, cols):
+                matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
+            currCol += 1
+
+        print(matrix)
+        for row in range(rows):
             matrix[row].reverse()
+
+        [
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]]
