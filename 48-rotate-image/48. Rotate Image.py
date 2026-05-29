@@ -6,18 +6,9 @@ class Solution:
         rows = len(matrix)
         cols = len(matrix[0])
 
-        currCol = 0
-
         for row in range(rows):
-            for col in range(currCol, cols):
+            for col in range(row + 1, cols):
                 matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
-            currCol += 1
 
-        print(matrix)
         for row in range(rows):
             matrix[row].reverse()
-
-        [
-            [1,2,3],
-            [4,5,6],
-            [7,8,9]]
